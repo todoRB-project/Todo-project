@@ -1,0 +1,271 @@
+ body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #eef2ff;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 120px;
+  
+}
+
+.page-container{
+    width: 480;
+    max-width: 600px;
+    margin: auto;
+}
+
+.nav-container{
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    z-index: 999;   
+    max-width: 600px;
+    background: #ffffffcc;
+    border-radius: 25px;
+    padding: 12px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}   
+.button-nav{
+    display: flex;
+    justify-content: space-around;
+
+}
+.nav-btn{
+    border: none;
+    background: none;
+    font-size: 14px;
+    padding: 8px 18px;
+ cursor: pointer;
+    transition: 0.3s ease;
+}
+ .nav-btn.active {
+    background: #e0f2fe;
+    color: white;
+}
+
+.liquid-card{
+    background: #ffffffcc;
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    padding: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    margin-bottom: 20px;
+}
+
+.liquid-card h1{
+    margin: 0;
+    font-size: 26px;
+    color: #7c3aed;
+}
+.progress-label{
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+
+}
+
+.liquidline{
+    margin-top: 10px;
+    height: 10px;
+    background: #eee;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+
+
+.daily-liquid{
+    height: 100%;
+    width: 40%;
+    background-color: #6366f1;
+    border-radius: 20px;
+
+}
+ 
+.liquid-text{
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.search-box{
+display: flex;
+align-items: center;
+gap: 10px;
+background: #ffffffcc;
+backdrop-filter: blur(15px);
+padding: 14px 18px;
+border: none;
+box-shadow: 0 5px 20px rgba(0,0,0,0.05 );
+margin-bottom: 25px;
+}
+
+.search-box input{
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+    font-size: 14px;
+    border-radius: 20px;
+}
+ .search-box i{
+    color: #888;
+ }
+
+ /*---task cards*/
+
+ .tasks-card{
+     background: #ffffffcc;
+    border-radius: 30px;
+    padding: 35px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+ 
+ .workout-card{
+     background: #ffffffcc;
+    border-radius: 30px;
+    padding: 35px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+ .groceries-card{
+    background: #ffffffcc;
+    border-radius: 30px;
+    padding: 35px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+ 
+ 
+ 
+
+/*--------headers*/
+ .task-header{
+     display: flex;
+    gap: 15px;
+    align-items: center;
+ }
+
+ .groceries-header{
+     display: flex;
+     
+    gap: 15px;
+    align-items: center;
+ }
+
+ .workout-header{
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+ }
+
+
+
+
+/*----  titles*/
+.task-title{
+     margin: 0;
+    font-size: 17px;
+    font-weight: 600;
+
+}
+.work-title{
+     margin: 0;
+    font-size: 17px;
+    font-weight: 600;
+
+}
+.groceries-title{
+    margin: 0;
+    font-size: 17px;
+    font-weight: 600;
+
+}
+
+.task-info{
+    margin: 5px 0 0;
+font-size: 13px;
+color: #666;
+
+}
+.work-info{
+    margin: 5px 0 0;
+font-size: 13px;
+color: #666;
+
+}
+
+.grocer-info{
+margin: 5px 0 0;
+font-size: 13px;
+color: #666;
+}   
+
+
+
+
+
+.groceries-tags span{
+font-size: 10px;
+padding: 6px 10px;
+border-radius: 15px;
+display: inline-flex;
+align-items: center;
+gap: 5px;
+}
+
+
+
+
+.shopping-tag { background: #fb923c; color: white; }
+.low-tag { background: #22c55e; color: white; }
+.home-tag { background: #cbd5e1; }
+
+
+.checkbox{
+    position: relative;
+    display: inline-block;
+}
+
+.checkbox input[type="checkbox"]{
+    opacity: 0;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.custom-checkbox{
+    width: 24px;
+    height: 24px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    display: inline-block;
+    position: relative;
+}
+
+
+.checkbox input[type="checkbox"]:checked + .custom-checkbox::after{
+    content: '✓';
+    position: absolute;
+    top: 0;
+    left: 4px;
+    font-size: 18px;
+    color: #7c3aed;
+}
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
