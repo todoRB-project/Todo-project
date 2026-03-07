@@ -9,7 +9,7 @@
 }
 
 .page-container{
-    width: 480;
+    width: 480px;
     max-width: 600px;
     margin: auto;
 }
@@ -115,13 +115,7 @@ margin-bottom: 25px;
 
  /*---task cards*/
 
- .tasks-card{
-     background: #ffffffcc;
-    border-radius: 30px;
-    padding: 35px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
-    margin-bottom: 20px;
-}
+ 
  
  .workout-card{
      background: #ffffffcc;
@@ -142,15 +136,9 @@ margin-bottom: 25px;
  
 
 /*--------headers*/
- .task-header{
-     display: flex;
-    gap: 15px;
-    align-items: center;
- }
-
+ 
  .groceries-header{
      display: flex;
-     
     gap: 15px;
     align-items: center;
  }
@@ -158,19 +146,18 @@ margin-bottom: 25px;
  .workout-header{
     display: flex;
     gap: 15px;
-    align-items: flex-start;
+    align-items: center;
  }
 
 
 
 
 /*----  titles*/
-.task-title{
-     margin: 0;
-    font-size: 17px;
-    font-weight: 600;
 
-}
+    
+
+
+
 .work-title{
      margin: 0;
     font-size: 17px;
@@ -183,13 +170,7 @@ margin-bottom: 25px;
     font-weight: 600;
 
 }
-
-.task-info{
-    margin: 5px 0 0;
-font-size: 13px;
-color: #666;
-
-}
+/*---pragphs or infos*/
 .work-info{
     margin: 5px 0 0;
 font-size: 13px;
@@ -224,35 +205,21 @@ gap: 5px;
 .home-tag { background: #cbd5e1; }
 
 
-.checkbox{
-    position: relative;
-    display: inline-block;
-}
-
 .checkbox input[type="checkbox"]{
-    opacity: 0;
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
+  
+  width: 20px;
+  height: 20px;
+  border: 2px solid #333;
+  border-radius: 4px; 
+  position: relative;
 }
 
-.custom-checkbox{
-    width: 24px;
-    height: 24px;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    display: inline-block;
-    position: relative;
-}
-
-
-.checkbox input[type="checkbox"]:checked + .custom-checkbox::after{
-    content: '✓';
-    position: absolute;
-    top: 0;
-    left: 4px;
-    font-size: 18px;
-    color: #7c3aed;
+.checkbox input[type="checkbox"]:checked::after{
+  content: "✔";
+  position: absolute;
+  top: 0;
+  left: 2px;
+  font-size: 16px;
 }
 
 
