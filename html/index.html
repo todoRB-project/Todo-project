@@ -1,126 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
-
-</head>
-
-<body>
-
-
-  <div class="page-container">
-
-    <!-- Navigation -->
-    <div class="nav-container">
-  <div class="button-nav">
-    <button class="nav-btn" id="tasks">Tasks</button>
-    <button class="nav-btn" id="calendar">Calendar</button>
-    <button class="nav-btn" id="stats">Stats</button>
-  </div>
-</div>
-    <!-- ===================== PAGE ===================== -->
-    <section class="page-active">
-
-      <!--liquid Card -->
-      <div class="liquid-card">
-
+  <body>
+    <div class="page-container">
+      <!-- Navigation -->
+      <div class="nav-container">
+        <div class="button-nav">
+          <button class="nav-btn" id="tasks">Tasks</button>
+          <button class="nav-btn" id="calendar">Calendar</button>
+          <button class="nav-btn" id="stats">Stats</button>
+        </div>
+      </div>
+      <!-- ===================== PAGE ===================== -->
+      <section class="page-active">
+        <!--liquid Card -->
+        <div class="liquid-card">
           <h1>Todo liquid</h1>
           <time id="todayDate" class="date"></time>
 
-           <p class="progress-label">Daily progress</p>
+          <p class="progress-label">Daily progress</p>
 
           <div class="liquidline">
-          <div id="dailybar" class="daily-liquid"></div>
-        </div>
-     </div>
-
-      <!-- Search -->
-      <div class="search-box">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" id="taskSearch" placeholder="Search tasks">
-      </div>
-
-      <!-- Active Tasks -->
-       <!--<section class="active-tasks">
-
-
-        <div class="tasks-container">
-           
-          <div class="tasks-section">
-            <h3>ACTIVE (1)</h3>
-
-            <div class="task-card">
-              <h2>Review Q1 Report</h2>
-              <p>Go through quarterly performance metrics</p>
-            </div>
+            <div id="dailybar" class="daily-liquid"></div>
           </div>
         </div>
 
-      </section>
-      -->
-
-      <!-- Workout Task ------------->
-
-      <section class="workout-card">
-
-        <div class="workout-header">
-
-          <label class="checkbox">
-            <input type="checkbox" class="workout-checkbox">
-          </label>
-
-           <div class="workout-content">
-             <h3 class="work-title">Morning Workout</h3>
-             <p class="work-info">30 min cardio + stretching</p>
-           </div>
-
+        <!-- Search -->
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="taskSearch" placeholder="Search tasks" />
         </div>
 
-        <button class="deletetag"><i class="fa fa-trash"></i> Delete</button>
+        <section class="active-card">
+          <div class="active-header">
+            <label class="checkbox">
+              <input type="checkbox" />
+            </label>
 
-      </section>
+            <div class="active-content">
+              <h2 class="active-title">Review Q1 Report</h2>
+              <p class="active-info">
+                Go through quarterly performance metrics
+              </p>
 
-
-      <!-- Groceries Task -->
-      <section class="groceries-card">
-
-        <div class="groceries-header">
-
-          <label class="checkbox">
-            <input type="checkbox" class="groceries-checkbox">
-        </label>
-
-          <div class="groceries-content">
-            <h3 class="groceries-title">Buy Groceries</h3>
-            <p class="grocer-info">Milk, eggs, vegetables and snacks</p>
-          </div>
-
-          </div>
-
-            <div class="groceries-tags">
-              <span class="shopping-tag"><i class="fa-solid fa-cart-shopping"></i> Shopping</span>
-              <span class="low-tag"><i class="fa-solid fa-flag"></i> Low</span>
-              <span class="home-tag"><i class="fa-solid fa-house"></i> Home</span>
+              <div class="active-tags">
+                <span class="tag-work"
+                  ><i class="fa-solid fa-briefcase"></i> work</span
+                >
+                <span class="tag-high"
+                  ><i class="fa-solid fa-flag"></i> high</span
+                >
+                <span class="tag-date"
+                  ><i class="fa-regular fa-calendar"></i> Feb 21</span
+                >
+                <span class="tag-urgent"
+                  ><i class="fa-solid fa-tag"></i> urgent</span
+                >
+                <span class="tag-report"
+                  ><i class="fa-solid fa-tag"></i> report</span
+                >
+              </div>
             </div>
 
-            <button class="deletetag"><i class="fa fa-trash"></i> Delete</button>
+            <button class="menu-btn">
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </button>
+          </div>
+        </section>
 
+        <!-- Workout Task ------------->
 
+        <section class="workout-card">
+          <div class="workout-header">
+            <label class="checkbox">
+              <input type="checkbox" class="workout-checkbox" />
+            </label>
+
+            <div class="workout-content">
+              <h3 class="work-title">Morning Workout</h3>
+              <p class="work-info">30 min cardio + stretching</p>
+            </div>
+          </div>
+
+          <button class="deletetag"><i class="fa fa-trash"></i> Delete</button>
+        </section>
+
+        <!-- Groceries Task -->
+        <section class="groceries-card">
+          <div class="groceries-header">
+            <label class="checkbox">
+              <input type="checkbox" class="groceries-checkbox" />
+            </label>
+
+            <div class="groceries-content">
+              <h3 class="groceries-title">Buy Groceries</h3>
+              <p class="grocer-info">Milk, eggs, vegetables and snacks</p>
+            </div>
+          </div>
+
+          <div class="groceries-tags">
+            <span class="shopping-tag"
+              ><i class="fa-solid fa-cart-shopping"></i> Shopping</span
+            >
+            <span class="low-tag"><i class="fa-solid fa-flag"></i> Low</span>
+            <span class="home-tag"><i class="fa-solid fa-house"></i> Home</span>
+          </div>
+
+          <button class="deletetag"><i class="fa fa-trash"></i> Delete</button>
+        </section>
       </section>
-
-    </section>
-
-  </div>
-
-
-
-
-
-</body>
-
+    </div>
+  </body>
 </html>
