@@ -1,332 +1,312 @@
- body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: #eef2ff;
-    display: flex;
-    justify-content: center;
-    padding-bottom: 120px;
-  
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(180deg, #f1f3ff 0%, #f8ebff 100%);
+  display: flex;
+  justify-content: center;
+  padding: 20px 0 130px;
 }
 
-.page-container{
-    width: 480px;
-    max-width: 600px;
-    margin: auto;
-}
-/* ================= ACTIVE TASKS ================= */
-
-.active-tasks{
-    margin-bottom: 25px;
+.page-container {
+  width: 430px;
+  max-width: 95%;
+  margin: auto;
 }
 
-.active-tasks h3{
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 15px;
+.page-active {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
-/* active task card (same style as workout) */
-.active-card{
-    background: #ffffffcc;
-    border-radius: 30px;
-    padding: 35px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
-    margin-bottom: 20px;
+.liquid-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(15px);
+  border-radius: 28px;
+  padding: 24px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
 }
 
-.active-header{
-    display: flex;
-    gap: 15px;
-    align-items: flex-start;
+.liquid-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
-.active-content{
-    flex: 1;
+.liquid-card h1 {
+  margin: 0;
+  font-size: 26px;
+  color: #4f46e5;
+  font-weight: 800;
 }
 
-.active-title{
-    margin: 0;
-    font-size: 22px;
-    font-weight: 700;
+.date {
+  display: block;
+  margin-top: 8px;
+  color: #555;
+  font-size: 14px;
 }
 
-.active-info{
-    margin: 6px 0 14px;
-    font-size: 15px;
-    color: #555;
+.sparkle-btn {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 18px;
+  background: #f59e0b;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
 }
 
-/* ================= TAGS ================= */
-
-.active-tags{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+.progress-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 18px;
 }
 
-.active-tags span{
-    font-size: 12px;
-    padding: 6px 12px;
-    border-radius: 20px;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
+.progress-label {
+  margin: 0;
+  font-size: 14px;
+  color: #444;
+  font-weight: 600;
 }
 
-/* colors similar to screenshot */
-
-.tag-work{
-    background: linear-gradient(90deg,#7c3aed,#a855f7);
-    color: white;
-}
-
-.tag-high{
-    background: #fb7185;
-    color: white;
-}
-
-.tag-date{
-    background: #e5e7eb;
-}
-
-.tag-urgent{
-    background: #ede9fe;
-    color: #7c3aed;
-}
-
-.tag-report{
-    background: #ede9fe;
-    color: #7c3aed;
-}
-
-/* ================= MENU BUTTON ================= */
-
-.menu-btn{
-    border: none;
-    background: none;
-    font-size: 18px;
-    cursor: pointer;
-    color: #888;
-}
-.nav-container{
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 95%;
-    z-index: 999;   
-    max-width: 600px;
-    background: #ffffffcc;
-    border-radius: 25px;
-    padding: 12px;
-box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-}   
-.button-nav{
-    display: flex;
-    justify-content: space-around;
-
-}
-.nav-btn{
-    border: none;
-    background: none;
-    font-size: 14px;
-    padding: 8px 18px;
- cursor: pointer;
-    transition: 0.3s ease;
-}
- .nav-btn.active {
-    background: #e0f2fe;
-    color: white;
-}
-
-.liquid-card{
-    background: #ffffffcc;
-    backdrop-filter: blur(15px);
-    border-radius: 25px;
-    padding: 25px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-    margin-bottom: 20px;
-}
-
-.liquid-card h1{
-    margin: 0;
-    font-size: 26px;
-    color: #7c3aed;
-}
-.progress-label{
-    margin-top: 10px;
-    font-size: 14px;
-    color: #666;
-
-}
-
-.liquidline{
-    margin-top: 10px;
-    height: 10px;
-    background: #eee;
-    border-radius: 20px;
-    overflow: hidden;
-}
-
-
-
-.daily-liquid{
-    height: 100%;
-    width: 40%;
-    background-color: #6366f1;
-    border-radius: 20px;
-
-}
- 
-.liquid-text{
-    margin-top: 10px;
-    font-size: 14px;
-}
-
-.search-box{
-display: flex;
-align-items: center;
-gap: 10px;
-background: #ffffffcc;
-backdrop-filter: blur(15px);
-padding: 14px 18px;
-border: none;
-box-shadow: 0 5px 20px rgba(0,0,0,0.05 );
-margin-bottom: 25px;
-}
-
-.search-box input{
-    border: none;
-    outline: none;
-    background: transparent;
-    width: 100%;
-    font-size: 14px;
-    border-radius: 20px;
-}
- .search-box i{
-    color: #888;
- }
-
- /*---task cards*/
-
- 
- 
- .workout-card{
-     background: #ffffffcc;
-    border-radius: 30px;
-    padding: 35px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
-    margin-bottom: 20px;
-}
- .groceries-card{
-    background: #ffffffcc;
-    border-radius: 30px;
-    padding: 35px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
-    margin-bottom: 20px;
-}
- 
- 
- 
-
-/*--------headers*/
- 
- .groceries-header{
-     display: flex;
-    gap: 15px;
-    align-items: center;
- }
-
- .workout-header{
-    display: flex;
-    gap: 15px;
-    align-items: center;
- }
-
-
-
-
-/*----  titles*/
-
-    
-
-
-
-.work-title{
-     margin: 0;
-    font-size: 17px;
-    font-weight: 600;
-
-}
-.groceries-title{
-    margin: 0;
-    font-size: 17px;
-    font-weight: 600;
-
-}
-/*---pragphs or infos*/
-.work-info{
-    margin: 5px 0 0;
-font-size: 13px;
-color: #666;
-
-}
-
-.grocer-info{
-margin: 5px 0 0;
-font-size: 13px;
-color: #666;
-}   
-
-
-
-
-
-.groceries-tags span{
-font-size: 10px;
-padding: 6px 10px;
-border-radius: 15px;
-display: inline-flex;
-align-items: center;
-gap: 5px;
-}
-
-
-
-
-.shopping-tag { background: #fb923c; color: white; }
-.low-tag { background: #22c55e; color: white; }
-.home-tag { background: #cbd5e1; }
-
-
-.checkbox input[type="checkbox"]{
-  
-  width: 20px;
-  height: 20px;
-  border: 2px solid #333;
-  border-radius: 4px; 
-  position: relative;
-}
-
-.checkbox input[type="checkbox"]:checked::after{
-  content: "✔";
-  position: absolute;
-  top: 0;
-  left: 2px;
+.progress-count {
+  color: #4f46e5;
   font-size: 16px;
+  font-weight: 700;
 }
 
+.liquidline {
+  margin-top: 10px;
+  height: 10px;
+  background: #ececec;
+  border-radius: 20px;
+  overflow: hidden;
+}
 
- 
+.daily-liquid {
+  height: 100%;
+  width: 66%;
+  background: linear-gradient(90deg, #2563eb, #9333ea, #ec4899);
+  border-radius: 20px;
+}
 
+.search-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(15px);
+  padding: 14px 18px;
+  border-radius: 24px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
 
+.search-box input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  font-size: 16px;
+  color: #555;
+}
 
+.filter-btn {
+  border: none;
+  background: #f8fafc;
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  cursor: pointer;
+  color: #666;
+  font-size: 18px;
+}
 
+.section-heading {
+  font-size: 14px;
+  font-weight: 800;
+  color: #4b5563;
+  letter-spacing: 0.5px;
+  margin-top: 4px;
+}
 
+.active-card,
+.completed-card {
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 30px;
+  padding: 24px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
 
+.active-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
 
+.active-content {
+  flex: 1;
+}
 
+.card-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
 
+.active-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 800;
+  color: #1f2937;
+}
 
+.active-info {
+  margin: 10px 0 16px;
+  font-size: 15px;
+  color: #5b5b5b;
+}
 
+.active-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 
+.active-tags span {
+  font-size: 12px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.tag-work {
+  background: linear-gradient(90deg, #7c3aed, #a855f7);
+  color: white;
+}
+
+.tag-high {
+  background: linear-gradient(90deg, #fb7185, #ec4899);
+  color: white;
+}
+
+.tag-date {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.tag-urgent,
+.tag-report,
+.tag-fitness,
+.tag-food {
+  background: #f3e8ff;
+  color: #7c3aed;
+}
+
+.tag-health {
+  background: #4ade80;
+  color: white;
+}
+
+.tag-medium {
+  background: #f59e0b;
+  color: white;
+}
+
+.tag-shopping {
+  background: #fb923c;
+  color: white;
+}
+
+.tag-low {
+  background: #4ade80;
+  color: white;
+}
+
+.menu-btn {
+  border: none;
+  background: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #888;
+  padding-top: 4px;
+}
+
+.circle-check {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.circle-check input {
+  opacity: 0;
+  position: absolute;
+}
+
+.circle-check span {
+  width: 28px;
+  height: 28px;
+  border: 2px solid #d1d5db;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 12px;
+  background: white;
+}
+
+.nav-container {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 430px;
+  max-width: 92%;
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.82);
+  border-radius: 28px;
+  padding: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(14px);
+}
+
+.button-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-btn {
+  border: none;
+  background: none;
+  font-size: 14px;
+  padding: 12px 22px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: #374151;
+}
+
+.nav-btn i {
+  font-size: 20px;
+}
+
+.nav-btn.active {
+  background: linear-gradient(180deg, #3b82f6, #7c3aed);
+  color: white;
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+}
