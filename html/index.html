@@ -4,24 +4,171 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <div class="tasks-container">
-      <!-- Active Tasks -->
-      <div class="tasks-section">
-        <h3>ACTIVE (1)</h3>
+    <div class="page-container">
+      <!-- ===================== PAGE ===================== -->
+      <section class="page-active">
+        <!-- liquid Card -->
+        <div class="liquid-card">
+          <div class="liquid-top">
+            <div>
+              <h1>Todo Liquid</h1>
+            </div>
 
-        <div class="task-card">
-          <h2>Review Q1 Report</h2>
-          <p>Go through quarterly performance metrics</p>
+            <button class="sparkle-btn">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </button>
+          </div>
+
+          <div class="progress-top">
+            <p class="progress-label">Daily Progress</p>
+          </div>
         </div>
-      </div>
 
-      <!-- Completed Tasks -->
-      <div class="tasks-section">
-        <h3>COMPLETED (0)</h3>
+        <!-- Search -->
+        <div class="search-box">
+          <input type="text" id="taskSearch" placeholder="Search tasks..." />
+        </div>
 
-        <div class="empty">No completed tasks</div>
+        <!-- ACTIVE -->
+        <div class="section-heading">ACTIVE (1)</div>
+
+        <section class="active-card">
+          <div class="active-header">
+            <label class="circle-check">
+              <input type="checkbox" />
+              <span></span>
+            </label>
+
+            <div class="active-content">
+              <div class="card-top-row">
+                <h2 class="active-title">Review Q1 Report</h2>
+                <button class="menu-btn">
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </button>
+              </div>
+
+              <p class="active-info">
+                Go through quarterly performance metrics
+              </p>
+
+              <div class="active-tags">
+                <span class="tag-work"
+                  ><i class="fa-solid fa-briefcase"></i> work</span
+                >
+                <span class="tag-high"
+                  ><i class="fa-solid fa-flag"></i> high</span
+                >
+                <span class="tag-date"
+                  ><i class="fa-regular fa-calendar"></i> date</span
+                >
+                <span class="tag-urgent"
+                  ><i class="fa-solid fa-tag"></i> urgent</span
+                >
+                <span class="tag-report"
+                  ><i class="fa-solid fa-tag"></i> report</span
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- COMPLETED -->
+        <div class="section-heading">COMPLETED (2)</div>
+
+        <section class="completed-card">
+          <div class="active-header">
+            <label class="circle-check completed-yellow">
+              <input type="checkbox" checked />
+              <span><i class="fa-solid fa-check"></i></span>
+            </label>
+
+            <div class="active-content">
+              <div class="card-top-row">
+                <h2 class="completed-title">Morning Workout</h2>
+                <button class="menu-btn">
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </button>
+              </div>
+
+              <p class="active-info">30 min cardio + stretching</p>
+
+              <div class="active-tags">
+                <span class="tag-health"
+                  ><i class="fa-solid fa-dumbbell"></i> health</span
+                >
+                <span class="tag-medium"
+                  ><i class="fa-solid fa-flag"></i> medium</span
+                >
+                <span class="tag-date"
+                  ><i class="fa-regular fa-calendar"></i> date</span
+                >
+                <span class="tag-fitness"
+                  ><i class="fa-solid fa-tag"></i> fitness</span
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="completed-card">
+          <div class="active-header">
+            <label class="circle-check completed-green">
+              <input type="checkbox" checked />
+              <span><i class="fa-solid fa-check"></i></span>
+            </label>
+
+            <div class="active-content">
+              <div class="card-top-row">
+                <h2 class="completed-title">Buy Groceries</h2>
+                <button class="menu-btn">
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </button>
+              </div>
+
+              <p class="active-info">Milk, eggs, bread, vegetables</p>
+
+              <div class="active-tags">
+                <span class="tag-shopping"
+                  ><i class="fa-solid fa-cart-shopping"></i> shopping</span
+                >
+                <span class="tag-low"
+                  ><i class="fa-solid fa-flag"></i> low</span
+                >
+                <span class="tag-food"
+                  ><i class="fa-solid fa-tag"></i> food</span
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- Navigation -->
+      <div class="nav-container">
+        <div class="button-nav">
+          <button class="nav-btn active">
+            <i class="fa-regular fa-square-check"></i>
+            <span>Tasks</span>
+          </button>
+
+          <button class="nav-btn">
+            <i class="fa-regular fa-calendar"></i>
+            <span>Calendar</span>
+          </button>
+
+          <button class="nav-btn">
+            <i class="fa-solid fa-chart-simple"></i>
+            <span>Stats</span>
+          </button>
+        </div>
       </div>
     </div>
   </body>
