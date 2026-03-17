@@ -11,6 +11,7 @@ body {
   width: 430px;
   max-width: 95%;
   margin: auto;
+  position: relative;
 }
 
 .page-active {
@@ -36,7 +37,7 @@ body {
 .liquid-card h1 {
   margin: 0;
   font-size: 26px;
-  color: #4f46e5;
+  color: #5b4cf0;
   font-weight: 800;
 }
 
@@ -82,7 +83,7 @@ body {
 .liquidline {
   margin-top: 10px;
   height: 10px;
-  background: #ececec;
+  background: #ececf2;
   border-radius: 20px;
   overflow: hidden;
 }
@@ -90,7 +91,7 @@ body {
 .daily-liquid {
   height: 100%;
   width: 66%;
-  background: linear-gradient(90deg, #2563eb, #9333ea, #ec4899);
+  background: linear-gradient(90deg, #5d8df7, #ae52f1, #f164a4);
   border-radius: 20px;
 }
 
@@ -117,7 +118,7 @@ body {
 
 .filter-btn {
   border: none;
-  background: #f8fafc;
+  background: #f3f4f6;
   width: 42px;
   height: 42px;
   border-radius: 14px;
@@ -148,7 +149,7 @@ body {
   gap: 16px;
 }
 
-.content {
+.active-content {
   flex: 1;
 }
 
@@ -265,6 +266,7 @@ body {
   background: white;
 }
 
+
 .nav-container {
   position: fixed;
   bottom: 20px;
@@ -309,4 +311,105 @@ body {
   background: linear-gradient(180deg, #3b82f6, #7c3aed);
   color: white;
   box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+}
+
+/* Floating + button */
+.fab-add {
+  position: fixed;
+  right: 18px;
+  bottom: 110px;
+  width: 64px;
+  height: 64px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #5b7cff, #8b2cf5);
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  box-shadow: 0 12px 26px rgba(99, 102, 241, 0.35);
+  z-index: 1000;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(31, 41, 55, 0.35);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 2000;
+}
+
+.modal-overlay.show {
+  display: flex;
+}
+
+.modal-card {
+  width: 100%;
+  max-width: 460px;
+  background: #f5f5f7;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  background: #f5f5f7;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-header h2 {
+  margin: 0;
+  color: #5b4cf0;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.close-modal {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: #e5e7eb;
+  color: #6b7280;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.task-form {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.task-form label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #374151;
+}
+
+.task-form input,
+.task-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid #c084fc;
+  outline: none;
+  border-radius: 18px;
+  padding: 14px 16px;
+  font-size: 16px;
+  background: white;
+  color: #374151;
+}
+
+.task-form textarea {
+  resize: none;
+  min-height: 110px;
+  border-color: #e5e7eb;
 }
