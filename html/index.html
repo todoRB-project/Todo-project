@@ -13,15 +13,12 @@
 
   <body>
     <div class="page-container">
-      <!-- ===================== PAGE ===================== -->
       <section class="page-active">
-        
-        <!-- Top Card -->
         <div class="liquid-card">
           <div class="liquid-top">
             <div>
               <h1>Todo Liquid</h1>
-              <time id="todayDate" class="date">date</time>
+              <time id="todayDate" class="date">Date</time>
             </div>
 
             <button class="sparkle-btn" type="button">
@@ -31,7 +28,7 @@
 
           <div class="progress-top">
             <p class="progress-label">Daily Progress</p>
-            <span id="progressText">0/3</span>
+            <span id="progressText" class="progress-count">0/0</span>
           </div>
 
           <div class="progress-bar">
@@ -39,7 +36,6 @@
           </div>
         </div>
 
-        <!-- Search -->
         <div class="search-box">
           <input type="text" id="taskSearch" placeholder="Search tasks..." />
           <button class="filter-btn" type="button">
@@ -47,121 +43,138 @@
           </button>
         </div>
 
-        <!-- ACTIVE -->
-        <div class="section-heading">ACTIVE (1)</div>
+        <div class="section-heading" id="activeHeading">ACTIVE (1)</div>
+        <div id="activeTasks">
+          <section class="active-card">
+            <div class="active-header">
+              <label class="circle-check">
+                <input type="checkbox" />
+                <span></span>
+              </label>
 
-        <section class="active-card">
-          <div class="active-header">
-            <label class="circle-check">
-              <input type="checkbox" />
-              <span></span>
-            </label>
+              <div class="active-content">
+                <div class="card-top-row">
+                  <h2 class="active-title">Review Q1 Report</h2>
 
-            <div class="active-content">
-              <div class="card-top-row">
-                <h2 class="active-title">Review Q1 Report</h2>
-                <button class="menu-btn" type="button">
-                  <i class="fa-solid fa-ellipsis-vertical"></i>
-                </button>
-              </div>
+                  <div class="card-actions">
+                    <button class="delete-btn" type="button" title="Delete">
+                      <i class="fa-solid fa-trash"></i>
+                    </button>
+                    <button class="menu-btn" type="button">
+                      <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </button>
+                  </div>
+                </div>
 
-              <p class="active-info">
-                Go through quarterly performance metrics
-              </p>
+                <p class="active-info">
+                  Go through quarterly performance metrics
+                </p>
 
-              <div class="active-tags">
-                <span class="tag-work"
-                  ><i class="fa-solid fa-briefcase"></i> work</span
-                >
-                <span class="tag-high"
-                  ><i class="fa-solid fa-flag"></i> high</span
-                >
-                <span class="tag-date"
-                  ><i class="fa-regular fa-calendar"></i> Feb 21</span
-                >
-                <span class="tag-urgent"
-                  ><i class="fa-solid fa-tag"></i> urgent</span
-                >
-                <span class="tag-report"
-                  ><i class="fa-solid fa-tag"></i> report</span
-                >
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- COMPLETED -->
-        <div class="section-heading">COMPLETED (2)</div>
-
-        <section class="completed-card">
-          <div class="active-header">
-            <label class="circle-check completed-yellow">
-              <input type="checkbox"/>
-              <span><i class="fa-solid fa-check"></i></span>
-            </label>
-
-            <div class="active-content">
-              <div class="card-top-row">
-                <h2 class="completed-title">Morning Workout</h2>
-                <button class="menu-btn" type="button">
-                  <i class="fa-solid fa-ellipsis-vertical"></i>
-                </button>
-              </div>
-
-              <p class="active-info">30 min cardio + stretching</p>
-
-              <div class="active-tags">
-                <span class="tag-health"
-                  ><i class="fa-solid fa-dumbbell"></i> health</span
-                >
-                <span class="tag-medium"
-                  ><i class="fa-solid fa-flag"></i> medium</span
-                >
-                <span class="tag-date"
-                  ><i class="fa-regular fa-calendar"></i> Feb 19</span
-                >
-                <span class="tag-fitness"
-                  ><i class="fa-solid fa-tag"></i> fitness</span
-                >
+                <div class="active-tags">
+                  <span class="tag-work"
+                    ><i class="fa-solid fa-briefcase"></i> work</span
+                  >
+                  <span class="tag-high"
+                    ><i class="fa-solid fa-flag"></i> high</span
+                  >
+                  <span class="tag-date"
+                    ><i class="fa-regular fa-calendar"></i> Feb 21</span
+                  >
+                  <span class="tag-urgent"
+                    ><i class="fa-solid fa-tag"></i> urgent</span
+                  >
+                  <span class="tag-report"
+                    ><i class="fa-solid fa-tag"></i> report</span
+                  >
+                </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
 
-        <section class="completed-card">
-          <div class="active-header">
-            <label class="circle-check completed-green">
-              <input type="checkbox"/>
-              <span><i class="fa-solid fa-check"></i></span>
-            </label>
+        <div class="section-heading" id="completedHeading">COMPLETED (2)</div>
+        <div id="completedTasks">
+          <section class="completed-card">
+            <div class="active-header">
+              <label class="circle-check completed-yellow">
+                <input type="checkbox" checked />
+                <span><i class="fa-solid fa-check"></i></span>
+              </label>
 
-            <div class="active-content">
-              <div class="card-top-row">
-                <h2 class="completed-title">Buy Groceries</h2>
-                <button class="menu-btn" type="button">
-                  <i class="fa-solid fa-ellipsis-vertical"></i>
-                </button>
-              </div>
+              <div class="active-content">
+                <div class="card-top-row">
+                  <h2 class="completed-title">Morning Workout</h2>
 
-              <p class="active-info">Milk, eggs, bread, vegetables</p>
+                  <div class="card-actions">
+                    <button class="delete-btn" type="button" title="Delete">
+                      <i class="fa-solid fa-trash"></i>
+                    </button>
+                    <button class="menu-btn" type="button">
+                      <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </button>
+                  </div>
+                </div>
 
-              <div class="active-tags">
-                <span class="tag-shopping"
-                  ><i class="fa-solid fa-cart-shopping"></i> shopping</span
-                >
-                <span class="tag-low"
-                  ><i class="fa-solid fa-flag"></i> low</span
-                >
-                <span class="tag-food"
-                  ><i class="fa-solid fa-tag"></i> food</span
-                >
+                <p class="active-info">30 min cardio + stretching</p>
+
+                <div class="active-tags">
+                  <span class="tag-health"
+                    ><i class="fa-solid fa-dumbbell"></i> health</span
+                  >
+                  <span class="tag-medium"
+                    ><i class="fa-solid fa-flag"></i> medium</span
+                  >
+                  <span class="tag-date"
+                    ><i class="fa-regular fa-calendar"></i> Feb 19</span
+                  >
+                  <span class="tag-fitness"
+                    ><i class="fa-solid fa-tag"></i> fitness</span
+                  >
+                </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+
+          <section class="completed-card">
+            <div class="active-header">
+              <label class="circle-check completed-green">
+                <input type="checkbox" checked />
+                <span><i class="fa-solid fa-check"></i></span>
+              </label>
+
+              <div class="active-content">
+                <div class="card-top-row">
+                  <h2 class="completed-title">Buy Groceries</h2>
+
+                  <div class="card-actions">
+                    <button class="delete-btn" type="button" title="Delete">
+                      <i class="fa-solid fa-trash"></i>
+                    </button>
+                    <button class="menu-btn" type="button">
+                      <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <p class="active-info">Milk, eggs, bread, vegetables</p>
+
+                <div class="active-tags">
+                  <span class="tag-shopping"
+                    ><i class="fa-solid fa-cart-shopping"></i> shopping</span
+                  >
+                  <span class="tag-low"
+                    ><i class="fa-solid fa-flag"></i> low</span
+                  >
+                  <span class="tag-food"
+                    ><i class="fa-solid fa-tag"></i> food</span
+                  >
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
       </section>
 
-      <!-- Bottom Navigation -->
       <div class="nav-container">
         <div class="button-nav">
           <button class="nav-btn active" type="button">
@@ -181,12 +194,10 @@
         </div>
       </div>
 
-      <!-- Floating Add Button -->
       <button class="fab-add" id="openModalBtn" type="button">
         <i class="fa-solid fa-plus"></i>
       </button>
 
-      <!-- Modal -->
       <div class="modal-overlay" id="taskModal">
         <div class="modal-card">
           <div class="modal-header">
@@ -196,17 +207,19 @@
             </button>
           </div>
 
-          <form class="task-form"  id="taskForm">
+          <form class="task-form" id="taskForm">
             <label for="taskTitle">Task Title *</label>
-            <input type="text" id="taskTitle" placeholder="Enter task title" re />
+            <input type="text" id="taskTitle" placeholder="Enter task title" />
 
             <label for="taskDescription">Description</label>
-            <textarea id="taskDescription" rows="5" placeholder="Add details"></textarea>
+            <textarea
+              id="taskDescription"
+              rows="5"
+              placeholder="Add details"
+            ></textarea>
 
             <button class="save-btn" type="submit">Save</button>
           </form>
-              
-
         </div>
       </div>
     </div>

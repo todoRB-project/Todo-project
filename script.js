@@ -1,7 +1,12 @@
 // ===== TODAY DATE =====
 const todayDate = document.getElementById("todayDate");
 const today = new Date();
-const options = { weekday:"long", year:"numeric", month:"long", day:"numeric" };
+const options = {
+  weekday: "long",
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+};
 todayDate.textContent = today.toLocaleDateString("en-US", options);
 
 // ===== CHECKBOX & PROGRESS =====
@@ -11,15 +16,19 @@ const taskContainer = document.getElementById("taskContainer");
 
 const updateProgress = () => {
   const allCards = document.querySelectorAll(".active-card, .completed-card");
-  const completedCards = document.querySelectorAll(".circle-check input:checked").length;
+  const completedCards = document.querySelectorAll(
+    ".circle-check input:checked"
+  ).length;
   const total = allCards.length;
   progressText.textContent = `${completedCards}/${total}`;
-  progressFill.style.width = total ? `${(completedCards / total) * 100}%` : "0%";
+  progressFill.style.width = total
+    ? `${(completedCards / total) * 100}%`
+    : "0%";
 };
 
 // Add existing checkboxes if any
-document.querySelectorAll(".circle-check input").forEach(box => {
-  box.addEventListener("change", function() {
+document.querySelectorAll(".circle-check input").forEach((box) => {
+  box.addEventListener("change", function () {
     const parentCard = box.closest(".active-card, .completed-card");
     parentCard.classList.toggle("completed-task", this.checked);
     box.closest(".circle-check").classList.toggle("checked", this.checked);
@@ -35,8 +44,10 @@ const closeModalBtn = document.getElementById("closeModalBtn");
 const taskModal = document.getElementById("taskModal");
 
 openModalBtn.addEventListener("click", () => taskModal.classList.add("show"));
-closeModalBtn.addEventListener("click", () => taskModal.classList.remove("show"));
-taskModal.addEventListener("click", e => {
+closeModalBtn.addEventListener("click", () =>
+  taskModal.classList.remove("show")
+);
+taskModal.addEventListener("click", (e) => {
   if (e.target === taskModal) taskModal.classList.remove("show");
 });
 
@@ -45,7 +56,7 @@ const taskForm = document.getElementById("taskForm");
 const taskTitle = document.getElementById("taskTitle");
 const taskDesc = document.getElementById("taskDescription");
 
-taskForm.addEventListener("submit", function(e) {
+taskForm.addEventListener("submit", function (e) {
   e.preventDefault();
 
   const title = taskTitle.value.trim();
@@ -71,7 +82,7 @@ taskForm.addEventListener("submit", function(e) {
   taskContainer.appendChild(taskCard);
 
   // Checkbox event for new task
-  taskCard.querySelector("input").addEventListener("change", function() {
+  taskCard.querySelector("input").addEventListener("change", function () {
     taskCard.classList.toggle("completed-task", this.checked);
     this.closest(".circle-check").classList.toggle("checked", this.checked);
     updateProgress();

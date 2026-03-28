@@ -7,21 +7,20 @@ body {
   padding: 20px 0 130px;
 }
 
-page-container {
-    width: 480px;      
-  max-width: 95%;    
+.page-container {
+  width: 480px;
+  max-width: 95%;
+  min-width: 320px;
   margin: auto;
-  min-width: 320px;  
-
+  position: relative;
 }
 
 .page-active {
   display: flex;
   flex-direction: column;
   gap: 18px;
-} 
+}
 
-/* ===== Liquid Card ===== */
 .liquid-card {
   background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(15px);
@@ -35,12 +34,6 @@ page-container {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-}
-
-.title-box {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
 }
 
 .liquid-card h1 {
@@ -69,7 +62,6 @@ page-container {
   box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
 }
 
-/* ===== Progress ===== */
 .progress-top {
   display: flex;
   justify-content: space-between;
@@ -82,6 +74,12 @@ page-container {
   font-size: 14px;
   color: #444;
   font-weight: 600;
+}
+
+.progress-count {
+  color: #4f46e5;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .progress-bar {
@@ -97,15 +95,9 @@ page-container {
   height: 100%;
   width: 0%;
   background: linear-gradient(90deg, #4facfe, #00f2fe);
-  transition: 0.3s ease;
+  transition: width 0.3s ease;
 }
 
-.completed-task {
-  opacity: 0.5;
-  text-decoration: line-through;
-}
-
-/* ===== Search Box ===== */
 .search-box {
   display: flex;
   align-items: center;
@@ -128,7 +120,17 @@ page-container {
   color: #555;
 }
 
-/* ===== Section Heading ===== */
+.filter-btn {
+  border: none;
+  background: #f3f4f6;
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  cursor: pointer;
+  color: #666;
+  font-size: 18px;
+}
+
 .section-heading {
   font-size: 14px;
   font-weight: 800;
@@ -137,14 +139,13 @@ page-container {
   margin-top: 4px;
 }
 
-/* ===== Active & Completed Cards ===== */
 .active-card,
 .completed-card {
   background: rgba(255, 255, 255, 0.75);
   border-radius: 30px;
   padding: 24px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
-  margin-bottom: 16px; /* space u dhexeeya cards */
+  margin-bottom: 16px;
 }
 
 .active-card:last-child,
@@ -158,6 +159,10 @@ page-container {
   gap: 16px;
 }
 
+.active-content {
+  flex: 1;
+}
+
 .card-top-row {
   display: flex;
   justify-content: space-between;
@@ -165,12 +170,20 @@ page-container {
   gap: 10px;
 }
 
-.active-title,
-.completed-title {
+.active-title {
   margin: 0;
   font-size: 24px;
   font-weight: 800;
   color: #1f2937;
+  text-decoration: none;
+}
+
+.completed-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #999;
+  text-decoration: line-through;
 }
 
 .active-info {
@@ -195,17 +208,55 @@ page-container {
   font-weight: 600;
 }
 
-/* ===== Tag Colors ===== */
-.tag-work { background: linear-gradient(90deg, #7c3aed, #a855f7); color: white; }
-.tag-high { background: linear-gradient(90deg, #fb7185, #ec4899); color: white; }
-.tag-date { background: #f3f4f6; color: #374151; }
-.tag-urgent, .tag-report, .tag-fitness, .tag-food { background: #f3e8ff; color: #7c3aed; }
-.tag-health { background: #4ade80; color: white; }
-.tag-medium { background: #f59e0b; color: white; }
-.tag-shopping { background: #fb923c; color: white; }
-.tag-low { background: #4ade80; color: white; }
+.tag-work {
+  background: linear-gradient(90deg, #7c3aed, #a855f7);
+  color: white;
+}
 
-/* ===== Menu Button ===== */
+.tag-high {
+  background: linear-gradient(90deg, #fb7185, #ec4899);
+  color: white;
+}
+
+.tag-date {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.tag-urgent,
+.tag-report,
+.tag-fitness,
+.tag-food {
+  background: #f3e8ff;
+  color: #7c3aed;
+}
+
+.tag-health {
+  background: #4ade80;
+  color: white;
+}
+
+.tag-medium {
+  background: #f59e0b;
+  color: white;
+}
+
+.tag-shopping {
+  background: #fb923c;
+  color: white;
+}
+
+.tag-low {
+  background: #4ade80;
+  color: white;
+}
+
+.card-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .menu-btn {
   border: none;
   background: none;
@@ -215,12 +266,27 @@ page-container {
   padding-top: 4px;
 }
 
-/* ===== Circle Check ===== */
+.delete-btn {
+  border: none;
+  background: #fee2e2;
+  color: #dc2626;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.delete-btn:hover {
+  background: #fecaca;
+}
+
 .circle-check {
   position: relative;
   width: 28px;
   height: 28px;
   display: inline-block;
+  flex-shrink: 0;
 }
 
 .circle-check input {
@@ -241,10 +307,9 @@ page-container {
 }
 
 .circle-check span i {
-  opacity: 0;
+  opacity: 1;
   color: white;
   font-size: 12px;
-  transition: 0.2s;
 }
 
 .circle-check input:checked + span {
@@ -252,11 +317,16 @@ page-container {
   border-color: #4f46e5;
 }
 
-.circle-check.checked span i {
-  opacity: 1;
+.completed-yellow span {
+  background: #fbbf24;
+  border-color: #fbbf24;
 }
 
-/* ===== Navigation ===== */
+.completed-green span {
+  background: #4ade80;
+  border-color: #4ade80;
+}
+
 .nav-container {
   position: fixed;
   bottom: 20px;
@@ -293,14 +363,16 @@ page-container {
   color: #374151;
 }
 
-.nav-btn i { font-size: 20px; }
+.nav-btn i {
+  font-size: 20px;
+}
 
 .nav-btn.active {
   background: linear-gradient(180deg, #3b82f6, #7c3aed);
   color: white;
   box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
 }
-/* Floating + button */
+
 .fab-add {
   position: fixed;
   right: 18px;
@@ -317,7 +389,6 @@ page-container {
   z-index: 1000;
 }
 
-/* Modal */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -401,24 +472,13 @@ page-container {
   border-color: #e5e7eb;
 }
 
-.modal-overlay {
-  display: none;
-}
-
-.modal-overlay.show {
-  display: flex;
-}
-
 .save-btn {
-  align-items: center;
   background: #4f46e5;
   color: white;
   border: none;
-  padding: 10px;
-  border-radius: 10px;
+  padding: 12px;
+  border-radius: 12px;
   cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
 }
-
-
-
-
