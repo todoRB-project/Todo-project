@@ -14,6 +14,7 @@
   <body>
     <div class="page-container">
       <section class="page-active">
+        
         <!-- Top Card -->
         <div class="liquid-card">
           <div class="liquid-top">
@@ -29,11 +30,11 @@
 
           <div class="progress-top">
             <p class="progress-label">Daily Progress</p>
-            <span class="progress-count">counter</span>
+            <span id="progressText">0/3</span>
           </div>
 
-          <div class="liquidline">
-            <div id="dailybar" class="daily-liquid"></div>
+          <div class="progress-bar">
+            <div id="progressFill"></div>
           </div>
         </div>
 
@@ -94,7 +95,7 @@
         <section class="completed-card">
           <div class="active-header">
             <label class="circle-check completed-yellow">
-              <input type="checkbox" checked />
+              <input type="checkbox"/>
               <span><i class="fa-solid fa-check"></i></span>
             </label>
 
@@ -129,7 +130,7 @@
         <section class="completed-card">
           <div class="active-header">
             <label class="circle-check completed-green">
-              <input type="checkbox" checked />
+              <input type="checkbox"/>
               <span><i class="fa-solid fa-check"></i></span>
             </label>
 
@@ -194,17 +195,17 @@
             </button>
           </div>
 
-          <form class="task-form">
+          <form class="task-form"  id="taskForm">
             <label for="taskTitle">Task Title *</label>
-            <input type="text" id="taskTitle" placeholder="Enter task title" />
+            <input type="text" id="taskTitle" placeholder="Enter task title" re />
 
             <label for="taskDescription">Description</label>
-            <textarea
-              id="taskDescription"
-              rows="5"
-              placeholder="Add details..."
-            ></textarea>
+            <textarea id="taskDescription" rows="5" placeholder="Add details"></textarea>
+
+            <button class="save-btn" type="submit">Save</button>
           </form>
+              
+
         </div>
       </div>
     </div>
