@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Todo Liquid</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -13,29 +13,38 @@
 
   <body>
     <div class="page-container">
-      <!-- ======== PAGE ====== -->
+      <!-- ===================== PAGE ===================== -->
       <section class="page-active">
-        <!-- liquid Card -->
+        
+        <!-- Top Card -->
         <div class="liquid-card">
           <div class="liquid-top">
             <div>
               <h1>Todo Liquid</h1>
-              <time id="todayDate" class="date">Date</time>
+              <time id="todayDate" class="date">date</time>
             </div>
 
-            <button class="sparkle-btn">
+            <button class="sparkle-btn" type="button">
               <i class="fa-solid fa-wand-magic-sparkles"></i>
             </button>
           </div>
 
           <div class="progress-top">
             <p class="progress-label">Daily Progress</p>
+            <span id="progressText">0/3</span>
+          </div>
+
+          <div class="progress-bar">
+            <div id="progressFill"></div>
           </div>
         </div>
 
         <!-- Search -->
         <div class="search-box">
           <input type="text" id="taskSearch" placeholder="Search tasks..." />
+          <button class="filter-btn" type="button">
+            <i class="fa-solid fa-filter"></i>
+          </button>
         </div>
 
         <!-- ACTIVE -->
@@ -45,12 +54,13 @@
           <div class="active-header">
             <label class="circle-check">
               <input type="checkbox" />
+              <span></span>
             </label>
 
             <div class="active-content">
               <div class="card-top-row">
                 <h2 class="active-title">Review Q1 Report</h2>
-                <button class="menu-btn">
+                <button class="menu-btn" type="button">
                   <i class="fa-solid fa-ellipsis-vertical"></i>
                 </button>
               </div>
@@ -67,7 +77,7 @@
                   ><i class="fa-solid fa-flag"></i> high</span
                 >
                 <span class="tag-date"
-                  ><i class="fa-regular fa-calendar"></i> date</span
+                  ><i class="fa-regular fa-calendar"></i> Feb 21</span
                 >
                 <span class="tag-urgent"
                   ><i class="fa-solid fa-tag"></i> urgent</span
@@ -86,14 +96,14 @@
         <section class="completed-card">
           <div class="active-header">
             <label class="circle-check completed-yellow">
-              <input type="checkbox" checked />
+              <input type="checkbox"/>
               <span><i class="fa-solid fa-check"></i></span>
             </label>
 
-            <div class="content">
+            <div class="active-content">
               <div class="card-top-row">
                 <h2 class="completed-title">Morning Workout</h2>
-                <button class="menu-btn">
+                <button class="menu-btn" type="button">
                   <i class="fa-solid fa-ellipsis-vertical"></i>
                 </button>
               </div>
@@ -108,7 +118,7 @@
                   ><i class="fa-solid fa-flag"></i> medium</span
                 >
                 <span class="tag-date"
-                  ><i class="fa-regular fa-calendar"></i> date</span
+                  ><i class="fa-regular fa-calendar"></i> Feb 19</span
                 >
                 <span class="tag-fitness"
                   ><i class="fa-solid fa-tag"></i> fitness</span
@@ -121,14 +131,14 @@
         <section class="completed-card">
           <div class="active-header">
             <label class="circle-check completed-green">
-              <input type="checkbox" checked />
+              <input type="checkbox"/>
               <span><i class="fa-solid fa-check"></i></span>
             </label>
 
-            <div class="content">
+            <div class="active-content">
               <div class="card-top-row">
                 <h2 class="completed-title">Buy Groceries</h2>
-                <button class="menu-btn">
+                <button class="menu-btn" type="button">
                   <i class="fa-solid fa-ellipsis-vertical"></i>
                 </button>
               </div>
@@ -151,25 +161,56 @@
         </section>
       </section>
 
-      <!-- Navigation -->
+      <!-- Bottom Navigation -->
       <div class="nav-container">
         <div class="button-nav">
-          <button class="nav-btn active">
+          <button class="nav-btn active" type="button">
             <i class="fa-regular fa-square-check"></i>
             <span>Tasks</span>
           </button>
 
-          <button class="nav-btn">
+          <button class="nav-btn" type="button">
             <i class="fa-regular fa-calendar"></i>
             <span>Calendar</span>
           </button>
 
-          <button class="nav-btn">
+          <button class="nav-btn" type="button">
             <i class="fa-solid fa-chart-simple"></i>
             <span>Stats</span>
           </button>
         </div>
       </div>
+
+      <!-- Floating Add Button -->
+      <button class="fab-add" id="openModalBtn" type="button">
+        <i class="fa-solid fa-plus"></i>
+      </button>
+
+      <!-- Modal -->
+      <div class="modal-overlay" id="taskModal">
+        <div class="modal-card">
+          <div class="modal-header">
+            <h2>New Task</h2>
+            <button class="close-modal" id="closeModalBtn" type="button">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+
+          <form class="task-form"  id="taskForm">
+            <label for="taskTitle">Task Title *</label>
+            <input type="text" id="taskTitle" placeholder="Enter task title" re />
+
+            <label for="taskDescription">Description</label>
+            <textarea id="taskDescription" rows="5" placeholder="Add details"></textarea>
+
+            <button class="save-btn" type="submit">Save</button>
+          </form>
+              
+
+        </div>
+      </div>
     </div>
+
+    <script src="app.js"></script>
   </body>
 </html>

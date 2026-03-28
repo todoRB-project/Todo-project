@@ -1,13 +1,12 @@
-// ===== TODAY DATE =====
 const todayDate = document.getElementById("todayDate");
 const today = new Date();
 const options = { weekday:"long", year:"numeric", month:"long", day:"numeric" };
 todayDate.textContent = today.toLocaleDateString("en-US", options);
 
 // ===== CHECKBOX & PROGRESS =====
+const checkboxes = document.querySelectorAll(".circle-check input");
 const progressText = document.getElementById("progressText");
 const progressFill = document.getElementById("progressFill");
-const taskContainer = document.getElementById("taskContainer");
 
 const updateProgress = () => {
   const allCards = document.querySelectorAll(".active-card, .completed-card");
@@ -17,33 +16,46 @@ const updateProgress = () => {
   progressFill.style.width = total ? `${(completedCards / total) * 100}%` : "0%";
 };
 
-// Add existing checkboxes if any
-document.querySelectorAll(".circle-check input").forEach(box => {
+checkboxes.forEach(box => {
   box.addEventListener("change", function() {
     const parentCard = box.closest(".active-card, .completed-card");
-    parentCard.classList.toggle("completed-task", this.checked);
-    box.closest(".circle-check").classList.toggle("checked", this.checked);
+    if (this.checked) {
+      box.closest(".circle-check").classList.add("checked");
+      parentCard.classList.add("completed-task");
+    } else {
+      box.closest(".circle-check").classList.remove("checked");
+      parentCard.classList.remove("completed-task");
+    }
     updateProgress();
   });
 });
 
 updateProgress();
 
-// ===== MODAL OPEN/CLOSE =====
+// ===== MODAL =====
 const openModalBtn = document.getElementById("openModalBtn");
 const closeModalBtn = document.getElementById("closeModalBtn");
 const taskModal = document.getElementById("taskModal");
 
-openModalBtn.addEventListener("click", () => taskModal.classList.add("show"));
-closeModalBtn.addEventListener("click", () => taskModal.classList.remove("show"));
-taskModal.addEventListener("click", e => {
-  if (e.target === taskModal) taskModal.classList.remove("show");
+openModalBtn.addEventListener("click", () => {
+  taskModal.classList.add("show");
 });
 
-// ===== FORM SAVE =====
+closeModalBtn.addEventListener("click", () => {
+  taskModal.classList.remove("show");
+});
+
+// marka banaanka la click gareeyo
+taskModal.addEventListener("click", (e) => {
+  if (e.target === taskModal) {
+    taskModal.classList.remove("show");
+  }
+});
+
 const taskForm = document.getElementById("taskForm");
 const taskTitle = document.getElementById("taskTitle");
 const taskDesc = document.getElementById("taskDescription");
+const taskContainer = document.getElementById("taskContainer");
 
 taskForm.addEventListener("submit", function(e) {
   e.preventDefault();
@@ -52,33 +64,9 @@ taskForm.addEventListener("submit", function(e) {
   const desc = taskDesc.value.trim();
 
   if (!title) {
-    alert("Fadlan geli title");
+    alert("Fadlan buuxi title-ka");
     return;
   }
 
-  // Create task
-  const taskCard = document.createElement("div");
-  taskCard.classList.add("active-card");
-  taskCard.innerHTML = `
-    <div class="circle-check">
-      <input type="checkbox" />
-    </div>
-    <div class="task-info">
-      <h3>${title}</h3>
-      <p>${desc}</p>
-    </div>
-  `;
-  taskContainer.appendChild(taskCard);
-
-  // Checkbox event for new task
-  taskCard.querySelector("input").addEventListener("change", function() {
-    taskCard.classList.toggle("completed-task", this.checked);
-    this.closest(".circle-check").classList.toggle("checked", this.checked);
-    updateProgress();
-  });
-
-  // Reset form, close modal, update progress
-  taskForm.reset();
-  taskModal.classList.remove("show");
   updateProgress();
 });
